@@ -37,7 +37,7 @@ do
 			 elif [ $j -eq 1 ]; then
 				dakika=$z
 				
-				if [[ "${dakika}" == "00" ]] ;then
+				if [[ ("${dakika}" == "00") && ($((i%2)) -eq 1) ]] ;then
 				
 					ogrenci_dakika="58"	
 					saat=$((saat=saat-1))
