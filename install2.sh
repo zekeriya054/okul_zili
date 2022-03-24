@@ -34,13 +34,14 @@ do
 
 			 if [ $j -eq 0 ]; then
 				saat=$z;
+				ogrenci_saat=$z;	
 			 elif [ $j -eq 1 ]; then
 				dakika=$z
 				
 				if [[ ("${dakika}" == "00") && ($((i%2)) -eq 1) ]] ;then
 				
 					ogrenci_dakika="58"	
-					saat=$((saat=saat-1))
+					ogrenci_saat=$((ogrenci_saat=ogrenci_saat-1))
 				else 
 					ogrenci_dakika=$((dakika-2))
 				fi
@@ -58,13 +59,14 @@ do
        		echo "$i Öğretmen: $dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3"
 	
 		if [ $((i%2)) -eq 1 ]; then
-		  echo "$i Öğrenci zili : $ogrenci_dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3" 
+		  echo "$i Öğrenci zili : $ogrenci_dakika $ogrenci_saat * * $hg $PWD/player.sh $PWD/zil.mp3" 
 		fi
 	  fi 
 
 	  ((i=i+1))
+
    done
-   
+
 
 done
 #echo "* * * * * mplayer $PWD/zil.mp3" >> mycrontab 
