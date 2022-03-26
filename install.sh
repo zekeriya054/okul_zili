@@ -55,20 +55,21 @@ do
                 
 
 
-		#echo "$dakika - $ogrenci_dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3" 
-       		echo "$i Öğretmen: $dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3"
+		
+       		echo "$dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3">>mycrontab
 	
 		if [ $((i%2)) -eq 1 ]; then
-		  echo "$i Öğrenci zili : $ogrenci_dakika $ogrenci_saat * * $hg $PWD/player.sh $PWD/zil.mp3" 
+		  echo "$ogrenci_dakika $ogrenci_saat * * $hg $PWD/player.sh $PWD/zil.mp3">>mycrontab 
+			
 		fi
 	  fi 
 
 	  ((i=i+1))
-
    done
 
 
 done
-#echo "* * * * * mplayer $PWD/zil.mp3" >> mycrontab 
+#echo "* * * * * mplayer $PWD/player.sh $PWD/zil.mp3" >> mycrontab 
+
 crontab mycrontab
 rm mycrontab
