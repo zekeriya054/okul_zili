@@ -1,5 +1,5 @@
 # Okul Zili Programı
-Linux crontab ile okul zili programı Raspberry Pi 4B üzerinde denenmiştir.
+Linux okul zili scripti. Raspberry Pi 4B üzerinde denenmiştir.
 
 
 Kullanımı :
