@@ -12,19 +12,19 @@ do
      if [ $i -eq 0 ]; then
 
 	   if [[ "${x}" == "Pazartesi" ]] ;then
-		   hg=0;	
+		   hg=1;	
 	   elif [[ "${x}" == "Salı" ]] ;then
-		   hg=1;
-	   elif [[ "${x}" == "Çarşamba" ]] ;then
 		   hg=2;
-	   elif [[ "${x}" == "Perşembe" ]] ;then
+	   elif [[ "${x}" == "Çarşamba" ]] ;then
 		   hg=3;
-	   elif [[ "${x}" == "Cuma" ]] ;then
+	   elif [[ "${x}" == "Perşembe" ]] ;then
 		   hg=4;
-	   elif [[ "${x}" == "Cumartesi" ]] ;then
+	   elif [[ "${x}" == "Cuma" ]] ;then
 		   hg=5;
+	   elif [[ "${x}" == "Cumartesi" ]] ;then
+		   hg=6;
 	   elif [[ "${x}" == "Pazar" ]] ;then
-		   hg=6;		   
+		   hg=7;		   
 	   fi
 	  else 
 		zaman=$(echo $x | tr ":" "\n")
@@ -56,10 +56,10 @@ do
 
 
 		
-       		echo "$dakika $saat * * $hg $PWD/player.sh $PWD/zil.mp3">>mycrontab
+       		echo "$dakika $saat * * $hg $PWD/player.sh $PWD/mariko.m4a">>mycrontab
 	
 		if [ $((i%2)) -eq 1 ]; then
-		  echo "$ogrenci_dakika $ogrenci_saat * * $hg $PWD/player.sh $PWD/zil.mp3">>mycrontab 
+		  echo "$ogrenci_dakika $ogrenci_saat * * $hg $PWD/player.sh $PWD/zil_ogrenci_anonslu.m4a">>mycrontab 
 			
 		fi
 	  fi 
